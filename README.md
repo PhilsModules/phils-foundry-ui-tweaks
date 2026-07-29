@@ -128,7 +128,7 @@ Entwickelt, um jedem Spielleiter und Spieler die maximale Kontrolle über sein B
 - **Eigene Ordner-Kategorien:** Erstelle eigene Ordner (z. B. "Kampf & Charaktere"), um mehrere Seitenleisten-Tabs in einem einzigen Icon zusammenzufassen. Ein Klick oder Hovern auf den Ordner öffnet ein elegantes Ausklapp-Untermenü!
 
 ### 🎨 Modern Dark Glassmorphic Design
-- Fügt sich nahtlos in das Design-System von Phils Modulen ein (goldene Akzente `#c5a059`, dunkles Glassmorphism-Design `rgba(20, 20, 26, 0.96)`, Signika-Schriftart und flüssige Animationen).
+- Fügt sich nahtlos in das Design-System von Phils Modulen ein.
 
 ### 👥 Nutzer-bezogene Einstellungen
 - Jede Einstellung wird pro Client gespeichert (`scope: "client"`). Jeder Spieler und der Spielleiter können ihre eigene Oberfläche individuell anpassen, ohne die Ansicht anderer zu verändern!
