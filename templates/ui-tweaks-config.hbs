@@ -1,0 +1,158 @@
+<form class="phils-ui-tweaks-form" autocomplete="off">
+    <nav class="tabs" data-group="primary">
+        <a class="item active" data-tab="left-controls">
+            <i class="fa-solid fa-bars-staggered"></i> {{localize "PHILS_UI_TWEAKS.TabLeftControls"}}
+        </a>
+        <a class="item" data-tab="right-sidebar">
+            <i class="fa-solid fa-columns"></i> {{localize "PHILS_UI_TWEAKS.TabRightSidebar"}}
+        </a>
+    </nav>
+
+    <div class="content">
+        <!-- Left Controls Tab -->
+        <div class="tab active" data-tab="left-controls" id="left-controls-list">
+            <div class="header-actions">
+                <p class="notes"><i class="fa-solid fa-info-circle"></i> {{localize "PHILS_UI_TWEAKS.DragToReorder"}}</p>
+            </div>
+
+            <div class="ui-tweaks-list">
+                {{#each controlsList}}
+                <div class="ui-tweaks-row main-control" data-name="{{this.name}}">
+                    <span class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    <span class="icon-preview"><i class="{{this.icon}}"></i></span>
+                    <span class="item-title">{{this.title}}</span>
+                    
+                    {{#if this.hasTools}}
+                    <button type="button" class="btn-toggle-tools" data-action="toggle-tools" title="Unterwerkzeuge anpassen">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> 
+                        <span class="tool-count">{{this.tools.length}} Werkzeuge</span> 
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </button>
+                    {{/if}}
+
+                    <div class="item-actions">
+                        <label class="hide-toggle" title="{{localize 'PHILS_UI_TWEAKS.Hide'}}">
+                            <input type="checkbox" name="controls_hidden_{{this.name}}" {{#if this.hidden}}checked{{/if}}>
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </label>
+                        
+                        <button type="button" class="btn-move" data-action="move-up" title="Move Up"><i class="fa-solid fa-arrow-up"></i></button>
+                        <button type="button" class="btn-move" data-action="move-down" title="Move Down"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                </div>
+
+                {{#if this.hasTools}}
+                <div class="ui-tweaks-subtools-container collapsed" data-parent-control="{{this.name}}">
+                    <div class="subtools-header"><i class="fa-solid fa-turn-up fa-rotate-90"></i> Unterwerkzeuge für <strong>{{this.title}}</strong></div>
+                    <div class="subtools-list">
+                        {{#each this.tools}}
+                        <div class="ui-tweaks-row sub-tool" data-tool-name="{{this.name}}">
+                            <span class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                            <span class="icon-preview"><i class="{{this.icon}}"></i></span>
+                            <span class="item-title">{{this.title}}</span>
+
+                            <div class="item-actions">
+                                <label class="hide-toggle" title="{{localize 'PHILS_UI_TWEAKS.Hide'}}">
+                                    <input type="checkbox" name="tool_hidden_{{../name}}_{{this.name}}" {{#if this.hidden}}checked{{/if}}>
+                                    <i class="fa-solid fa-eye-slash"></i>
+                                </label>
+
+                                <button type="button" class="btn-move" data-action="move-up" title="Move Up"><i class="fa-solid fa-arrow-up"></i></button>
+                                <button type="button" class="btn-move" data-action="move-down" title="Move Down"><i class="fa-solid fa-arrow-down"></i></button>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Right Sidebar Tab -->
+        <div class="tab" data-tab="right-sidebar" id="right-sidebar-list">
+            <div class="header-actions">
+                <p class="notes"><i class="fa-solid fa-info-circle"></i> {{localize "PHILS_UI_TWEAKS.DragToReorder"}}</p>
+                <div class="action-bar">
+                    <button type="button" class="btn-create-folder" data-action="create-sidebar-folder">
+                        <i class="fa-solid fa-folder-plus"></i> {{localize "PHILS_UI_TWEAKS.CreateFolder"}}
+                    </button>
+                </div>
+            </div>
+
+            <div class="ui-tweaks-list">
+                {{#each sidebarList}}
+                {{#if this.isFolder}}
+                <!-- Folder Row in Main Reorderable List -->
+                <div class="ui-tweaks-row folder-row" data-name="{{this.name}}" data-folder-id="{{this.folderId}}">
+                    <span class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    <span class="icon-preview">
+                        {{#if this.isSvg}}
+                        {{{this.icon}}}
+                        {{else if this.isImgIcon}}
+                        <img src="{{this.icon}}" style="width: 20px; height: 20px; object-fit: contain;" />
+                        {{else}}
+                        <i class="{{this.icon}}"></i>
+                        {{/if}}
+                    </span>
+                    <span class="item-title"><strong>{{this.title}}</strong></span>
+
+                    <div class="item-actions">
+                        <button type="button" class="btn-move btn-delete-folder" data-action="delete-sidebar-folder" data-folder-id="{{this.folderId}}" title="{{localize 'PHILS_UI_TWEAKS.DeleteFolder'}}">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button type="button" class="btn-move" data-action="move-up" title="Move Up"><i class="fa-solid fa-arrow-up"></i></button>
+                        <button type="button" class="btn-move" data-action="move-down" title="Move Down"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                </div>
+                {{else}}
+                <!-- Standard Sidebar Tab Row -->
+                <div class="ui-tweaks-row" data-name="{{this.name}}">
+                    <span class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    <span class="icon-preview">
+                        {{#if this.isSvg}}
+                        {{{this.icon}}}
+                        {{else if this.isImgIcon}}
+                        <img src="{{this.icon}}" style="width: 20px; height: 20px; object-fit: contain;" />
+                        {{else}}
+                        <i class="{{this.icon}}"></i>
+                        {{/if}}
+                    </span>
+                    <span class="item-title">{{this.title}}</span>
+
+                    {{#if ../sidebarFolders.length}}
+                    <div class="folder-select-wrapper">
+                        <select name="sidebar_folder_{{this.name}}" class="folder-select" title="{{localize 'PHILS_UI_TWEAKS.SelectFolder'}}">
+                            <option value="">{{localize "PHILS_UI_TWEAKS.NoFolder"}}</option>
+                            {{#each ../sidebarFolders}}
+                            <option value="{{this.id}}" {{#if (eq ../folderId this.id)}}selected{{/if}}>📁 {{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    {{/if}}
+
+                    <div class="item-actions">
+                        <label class="hide-toggle" title="{{localize 'PHILS_UI_TWEAKS.Hide'}}">
+                            <input type="checkbox" name="sidebar_hidden_{{this.name}}" {{#if this.hidden}}checked{{/if}}>
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </label>
+
+                        <button type="button" class="btn-move" data-action="move-up" title="Move Up"><i class="fa-solid fa-arrow-up"></i></button>
+                        <button type="button" class="btn-move" data-action="move-down" title="Move Down"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <footer class="sheet-footer">
+        <button type="submit" name="submit" class="btn-save">
+            <i class="fa-solid fa-save"></i> {{localize "PHILS_UI_TWEAKS.Save"}}
+        </button>
+        <button type="button" class="btn-reset" data-action="reset">
+            <i class="fa-solid fa-rotate-left"></i> {{localize "PHILS_UI_TWEAKS.Reset"}}
+        </button>
+    </footer>
+</form>

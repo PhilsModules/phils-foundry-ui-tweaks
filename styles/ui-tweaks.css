@@ -1,0 +1,937 @@
+/* ==========================================================================
+   Phils UI Tweaks - Elegance Design System (Matching Quest Tracker Theme)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600&display=swap');
+
+:root {
+  --ui-tweaks-primary: #c5a059;
+  --ui-tweaks-primary-dim: rgba(197, 160, 89, 0.15);
+  --ui-tweaks-primary-glow: rgba(197, 160, 89, 0.35);
+  --ui-tweaks-bg: rgba(20, 20, 26, 0.96);
+  --ui-tweaks-card-bg: rgba(255, 255, 255, 0.03);
+  --ui-tweaks-card-hover: rgba(197, 160, 89, 0.08);
+  --ui-tweaks-border: 1px solid rgba(255, 255, 255, 0.1);
+  --ui-tweaks-border-active: 1px solid rgba(197, 160, 89, 0.6);
+  --ui-tweaks-font: "Signika", sans-serif;
+  --ui-tweaks-text-main: #f0f0f4;
+  --ui-tweaks-text-muted: #9aa0b4;
+  --ui-tweaks-danger: #e74c3c;
+  --ui-tweaks-success: #2ecc71;
+}
+
+/* Vertical Sidebar Tabs Layout (Anchored strictly at Top of UI) */
+#ui-right #sidebar,
+#sidebar.app,
+#sidebar {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    align-content: flex-start !important;
+}
+
+#ui-right #sidebar-tabs,
+#sidebar.app #sidebar-tabs,
+#sidebar #sidebar-tabs,
+#sidebar nav#sidebar-tabs,
+#sidebar-tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    align-self: flex-start !important;
+    margin: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: auto !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+    transform: none !important;
+    gap: 4px !important;
+    height: auto !important;
+    max-height: calc(100% - 20px) !important;
+}
+
+/* Prevent tab items from stretching vertically (Foundry default flex: 1) */
+#ui-right #sidebar-tabs > *,
+#sidebar.app #sidebar-tabs > *,
+#sidebar #sidebar-tabs > *,
+#sidebar nav#sidebar-tabs > *,
+#sidebar-tabs > *,
+#sidebar-tabs .item,
+#sidebar-tabs a,
+#sidebar-tabs button {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: 32px !important;
+    width: 32px !important;
+    min-height: 32px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    align-self: center !important;
+}
+
+/* Sidebar Collapse Toggle Positioning Fix (removes absolute overlap everywhere inside sidebar) */
+#ui-right .collapse,
+#ui-right [data-action="collapse"],
+#sidebar .collapse,
+#sidebar [data-action="collapse"],
+#sidebar > .collapse,
+#sidebar > [data-action="collapse"],
+#sidebar-tabs .collapse,
+#sidebar-tabs [data-action="collapse"],
+#sidebar-tabs a.collapse,
+#sidebar-tabs button.collapse,
+.sidebar-tab-collapse,
+.collapse[data-action="collapse"] {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    inset: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
+}
+
+/* Hidden class for sidebar and controls */
+.ui-tweaks-hidden {
+    display: none !important;
+}
+
+/* Sidebar Folder Container & Pop-Out Submenu */
+.ui-tweaks-folder-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-tweaks-folder-btn {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.ui-tweaks-folder-dropdown {
+    display: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    margin-right: 8px;
+    background: var(--ui-tweaks-bg);
+    border: 1px solid var(--ui-tweaks-primary);
+    border-radius: 6px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px var(--ui-tweaks-primary-glow);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 44px;
+    align-items: center;
+}
+
+/* Invisible hover bridge to prevent losing hover state when moving mouse across the gap */
+.ui-tweaks-folder-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    right: -16px;
+    width: 20px;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.ui-tweaks-folder-wrapper:hover .ui-tweaks-folder-dropdown,
+.ui-tweaks-folder-wrapper.hover-open .ui-tweaks-folder-dropdown,
+.ui-tweaks-folder-wrapper.open .ui-tweaks-folder-dropdown {
+    display: flex;
+    animation: uiTweaksPopIn 0.15s ease-out;
+}
+
+@keyframes uiTweaksPopIn {
+    from {
+        opacity: 0;
+        transform: translateX(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.phils-ui-tweaks-app .header-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.phils-ui-tweaks-app .header-actions .notes {
+    margin-bottom: 0;
+}
+
+.phils-ui-tweaks-app .action-bar {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-create-folder {
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.2) 0%, rgba(163, 127, 59, 0.2) 100%);
+    border: 1px solid var(--ui-tweaks-primary);
+    color: var(--ui-tweaks-primary);
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: var(--ui-tweaks-font);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-create-folder:hover {
+    background: var(--ui-tweaks-primary);
+    color: #141419;
+    box-shadow: 0 0 10px var(--ui-tweaks-primary-glow);
+    transform: translateY(-1px);
+}
+
+.folder-select-wrapper {
+    margin-left: auto;
+    margin-right: 6px;
+}
+
+.folder-select,
+.phils-ui-tweaks-app select {
+    background-color: #141419 !important;
+    border: 1px solid rgba(197, 160, 89, 0.5) !important;
+    color: var(--ui-tweaks-text-main) !important;
+    font-family: var(--ui-tweaks-font) !important;
+    border-radius: 4px !important;
+    padding: 3px 8px !important;
+    font-size: 0.82rem !important;
+    cursor: pointer !important;
+    outline: none !important;
+}
+
+.folder-select:focus,
+.folder-select:hover,
+.phils-ui-tweaks-app select:focus,
+.phils-ui-tweaks-app select:hover {
+    border-color: var(--ui-tweaks-primary) !important;
+    box-shadow: 0 0 6px var(--ui-tweaks-primary-glow) !important;
+}
+
+/* Explicit styling for select dropdown options in dark theme (overriding Foundry's default light parchment background) */
+.folder-select option,
+.phils-ui-tweaks-app select option {
+    background-color: #1a1a20 !important;
+    color: #f0f0f4 !important;
+    font-family: var(--ui-tweaks-font) !important;
+    font-size: 0.88rem !important;
+    padding: 6px 10px !important;
+}
+
+.folder-select option:checked,
+.folder-select option:hover,
+.phils-ui-tweaks-app select option:checked,
+.phils-ui-tweaks-app select option:hover {
+    background-color: #3a3220 !important;
+    color: #c5a059 !important;
+}
+
+.folders-section {
+    margin-bottom: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed var(--ui-tweaks-primary);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.btn-delete-folder {
+    color: var(--ui-tweaks-danger) !important;
+}
+
+.btn-delete-folder:hover {
+    background: rgba(231, 76, 60, 0.2) !important;
+    border-color: var(--ui-tweaks-danger) !important;
+}
+
+/* Configuration App & Folder Dialog Base Styling */
+#phils-ui-tweaks-config,
+#phils-ui-tweaks-folder-dialog,
+.phils-ui-tweaks-app {
+    background: var(--ui-tweaks-bg) !important;
+    border: 1px solid var(--ui-tweaks-primary) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 20px var(--ui-tweaks-primary-glow) !important;
+    font-family: var(--ui-tweaks-font) !important;
+    border-radius: 8px !important;
+}
+
+
+
+
+#phils-ui-tweaks-config .window-header,
+#phils-ui-tweaks-folder-dialog .window-header,
+.phils-ui-tweaks-app .window-header {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-bottom: 1px solid var(--ui-tweaks-primary) !important;
+    color: var(--ui-tweaks-primary) !important;
+    font-family: var(--ui-tweaks-font) !important;
+    padding: 6px 12px !important;
+}
+
+#phils-ui-tweaks-config .window-header .window-title,
+#phils-ui-tweaks-folder-dialog .window-header .window-title,
+.phils-ui-tweaks-app .window-header .window-title {
+    color: var(--ui-tweaks-text-main) !important;
+    font-weight: 600 !important;
+    font-family: var(--ui-tweaks-font) !important;
+    font-size: 1rem !important;
+}
+
+#phils-ui-tweaks-config .window-header .header-button,
+#phils-ui-tweaks-folder-dialog .window-header .header-button,
+.phils-ui-tweaks-app .window-header .header-button {
+    color: var(--ui-tweaks-text-muted) !important;
+    transition: color 0.2s ease;
+}
+
+#phils-ui-tweaks-config .window-header .header-button:hover,
+#phils-ui-tweaks-folder-dialog .window-header .header-button:hover,
+.phils-ui-tweaks-app .window-header .header-button:hover {
+    color: var(--ui-tweaks-primary) !important;
+}
+
+#phils-ui-tweaks-config .window-content,
+#phils-ui-tweaks-folder-dialog .window-content,
+.phils-ui-tweaks-app .window-content {
+    background: var(--ui-tweaks-bg) !important;
+    color: var(--ui-tweaks-text-main) !important;
+    font-family: var(--ui-tweaks-font) !important;
+    padding: 14px 16px !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* =============================================
+   Folder Creation Dialog - Quest Tracker Style
+   ============================================= */
+
+/* Force all Foundry-default input/text overrides inside dialog */
+#phils-ui-tweaks-folder-dialog input,
+#phils-ui-tweaks-folder-dialog input[type="text"],
+#phils-ui-tweaks-folder-dialog input[type="search"],
+#phils-ui-tweaks-folder-dialog textarea {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid #444 !important;
+    color: #eee !important;
+    font-family: "Signika", sans-serif !important;
+    border-radius: 4px !important;
+    padding: 6px 10px !important;
+    font-size: 0.9rem !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#phils-ui-tweaks-folder-dialog input:focus,
+#phils-ui-tweaks-folder-dialog input[type="text"]:focus {
+    border-color: #c5a059 !important;
+    box-shadow: 0 0 5px #c5a059 !important;
+}
+
+#phils-ui-tweaks-folder-dialog input::placeholder {
+    color: #666 !important;
+    opacity: 1 !important;
+}
+
+/* Form Groups: stack label above input */
+#phils-ui-tweaks-folder-dialog .ui-tweaks-dialog-form {
+    padding: 4px 0 !important;
+}
+
+#phils-ui-tweaks-folder-dialog .ui-tweaks-dialog-form .form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin-bottom: 16px !important;
+    /* Prevent Foundry's default row layout */
+    flex-wrap: nowrap !important;
+}
+
+#phils-ui-tweaks-folder-dialog .ui-tweaks-dialog-form label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #c5a059 !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    font-family: "Signika", sans-serif !important;
+    margin-bottom: 6px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    /* Override any flex: 0 0 from Foundry's form layout */
+    flex: none !important;
+    min-width: unset !important;
+    width: 100% !important;
+}
+
+/* FilePicker row: input + square icon button */
+#phils-ui-tweaks-folder-dialog .file-picker-container {
+    display: flex !important;
+    gap: 6px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+}
+
+#phils-ui-tweaks-folder-dialog .file-picker-container input {
+    flex: 1 1 auto !important;
+    width: 0 !important; /* allow flex to control it */
+}
+
+#phils-ui-tweaks-folder-dialog .btn-browse-filepicker {
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid #555 !important;
+    color: #c5a059 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    transition: all 0.2s !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+#phils-ui-tweaks-folder-dialog .btn-browse-filepicker:hover {
+    background: #333 !important;
+    border-color: #c5a059 !important;
+    color: #fff !important;
+    box-shadow: 0 0 5px rgba(197, 160, 89, 0.5) !important;
+}
+
+/* Dialog Buttons Footer */
+#phils-ui-tweaks-folder-dialog .dialog-buttons {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+    padding-top: 12px !important;
+    border-top: 1px solid #c5a059 !important;
+}
+
+#phils-ui-tweaks-folder-dialog .dialog-buttons button {
+    flex: 1 !important;
+    padding: 8px !important;
+    font-family: "Signika", sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-transform: none !important;
+    transition: all 0.2s !important;
+    box-shadow: none !important;
+}
+
+/* Create/default = Gold outline style */
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.create,
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.default {
+    color: #c5a059 !important;
+    border: 1px solid #c5a059 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.create:hover,
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.default:hover {
+    background: #c5a059 !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px #c5a059 !important;
+}
+
+/* Cancel = Red outline style */
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.cancel {
+    color: #e74c3c !important;
+    border: 1px solid #e74c3c !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+#phils-ui-tweaks-folder-dialog .dialog-buttons button.cancel:hover {
+    background: #e74c3c !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px #e74c3c !important;
+}
+
+#phils-ui-tweaks-config nav.tabs,
+.phils-ui-tweaks-app nav.tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid var(--ui-tweaks-primary);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px 6px 0 0;
+    padding: 6px;
+}
+
+.phils-ui-tweaks-app nav.tabs .item {
+    color: var(--ui-tweaks-text-muted);
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.phils-ui-tweaks-app nav.tabs .item:hover {
+    color: #ffffff;
+    border-color: rgba(197, 160, 89, 0.4);
+}
+
+.phils-ui-tweaks-app nav.tabs .item.active {
+    color: #ffffff;
+    background: var(--ui-tweaks-primary-dim);
+    border: 1px solid var(--ui-tweaks-primary);
+    box-shadow: 0 0 8px var(--ui-tweaks-primary-glow);
+}
+
+.phils-ui-tweaks-app .notes {
+    font-size: 0.88rem;
+    color: var(--ui-tweaks-text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.phils-ui-tweaks-app .notes i {
+    color: var(--ui-tweaks-primary);
+}
+
+.ui-tweaks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 460px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.ui-tweaks-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ui-tweaks-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.ui-tweaks-list::-webkit-scrollbar-thumb {
+    background: var(--ui-tweaks-primary-dim);
+    border: 1px solid var(--ui-tweaks-primary);
+    border-radius: 3px;
+}
+
+.ui-tweaks-row {
+    display: flex;
+    align-items: center;
+    background: var(--ui-tweaks-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 7px 12px;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.ui-tweaks-row:hover {
+    background: var(--ui-tweaks-card-hover);
+    border-color: rgba(197, 160, 89, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ui-tweaks-row.dragging {
+    opacity: 0.4;
+    border: 1px dashed var(--ui-tweaks-primary) !important;
+    background: rgba(197, 160, 89, 0.1) !important;
+}
+
+.ui-tweaks-row.drag-over {
+    border: 2px solid var(--ui-tweaks-primary) !important;
+    background: rgba(197, 160, 89, 0.2) !important;
+    box-shadow: 0 0 10px var(--ui-tweaks-primary-glow);
+}
+
+.ui-tweaks-row .drag-handle {
+    color: #6a7282;
+    cursor: grab;
+    transition: color 0.15s ease;
+}
+
+.ui-tweaks-row:hover .drag-handle {
+    color: var(--ui-tweaks-primary);
+}
+
+.ui-tweaks-row.dragging .drag-handle {
+    cursor: grabbing;
+}
+
+.ui-tweaks-row .icon-preview {
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: var(--ui-tweaks-primary);
+    text-shadow: 0 0 6px var(--ui-tweaks-primary-glow);
+}
+
+.ui-tweaks-row .item-title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Compact Pill Badge for Sub-tools Expander */
+.btn-toggle-tools {
+    background: var(--ui-tweaks-primary-dim);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: var(--ui-tweaks-primary);
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: var(--ui-tweaks-font);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-toggle-tools:hover {
+    background: var(--ui-tweaks-primary);
+    color: #141419;
+    box-shadow: 0 0 8px var(--ui-tweaks-primary-glow);
+    border-color: #d4af67;
+}
+
+/* Sub-tools Accordion Container */
+.ui-tweaks-subtools-container {
+    margin-left: 26px;
+    margin-top: -2px;
+    margin-bottom: 6px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border-left: 2px solid var(--ui-tweaks-primary);
+    border-radius: 0 8px 8px 0;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.ui-tweaks-subtools-container.collapsed {
+    display: none;
+}
+
+.subtools-header {
+    font-size: 0.82rem;
+    color: var(--ui-tweaks-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.subtools-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ui-tweaks-row.sub-tool {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.ui-tweaks-row.sub-tool:hover {
+    background: rgba(197, 160, 89, 0.08);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.ui-tweaks-row.sub-tool .icon-preview {
+    font-size: 0.95rem;
+    color: #76b0f1;
+    text-shadow: none;
+}
+
+.ui-tweaks-row .item-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ui-tweaks-row .hide-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.ui-tweaks-row .hide-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ui-tweaks-row .hide-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.ui-tweaks-row .hide-toggle i {
+    color: var(--ui-tweaks-success);
+    transition: color 0.2s ease;
+}
+
+.ui-tweaks-row .hide-toggle input[type="checkbox"]:checked + i {
+    color: var(--ui-tweaks-danger);
+}
+
+.ui-tweaks-row .btn-move {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--ui-tweaks-text-muted);
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 0.8rem;
+    transition: all 0.15s ease;
+}
+
+.ui-tweaks-row .btn-move:hover {
+    background: rgba(197, 160, 89, 0.2);
+    color: #fff;
+    border-color: var(--ui-tweaks-primary);
+}
+
+/* Footer Action Buttons */
+.phils-ui-tweaks-app footer.sheet-footer {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--ui-tweaks-primary);
+}
+
+.phils-ui-tweaks-app footer button {
+    flex: 1;
+    padding: 9px;
+    font-family: var(--ui-tweaks-font);
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.phils-ui-tweaks-app footer .btn-save {
+    background: linear-gradient(135deg, #c5a059 0%, #a37f3b 100%);
+    color: #141419;
+    border: 1px solid #d4af67;
+    box-shadow: 0 2px 10px rgba(197, 160, 89, 0.3);
+}
+
+.phils-ui-tweaks-app footer .btn-save:hover {
+    background: linear-gradient(135deg, #d4af67 0%, #b8934b 100%);
+    box-shadow: 0 0 14px rgba(197, 160, 89, 0.6);
+    transform: translateY(-1px);
+}
+
+.phils-ui-tweaks-app footer .btn-reset {
+    background: rgba(198, 40, 40, 0.2);
+    color: #ff8a80;
+    border: 1px solid rgba(198, 40, 40, 0.5);
+}
+
+.phils-ui-tweaks-app footer .btn-reset:hover {
+    background: #c62828;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(198, 40, 40, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Folder Creation Dialog Styling */
+.phils-ui-tweaks-app.dialog,
+.ui-tweaks-dialog {
+    background: var(--ui-tweaks-bg) !important;
+    border: 1px solid var(--ui-tweaks-primary) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 20px var(--ui-tweaks-primary-glow) !important;
+    font-family: var(--ui-tweaks-font) !important;
+}
+
+.phils-ui-tweaks-app.dialog .window-header,
+.ui-tweaks-dialog .window-header {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-bottom: 1px solid var(--ui-tweaks-primary) !important;
+    color: var(--ui-tweaks-primary) !important;
+    font-family: var(--ui-tweaks-font) !important;
+}
+
+.phils-ui-tweaks-app.dialog .window-header .window-title,
+.ui-tweaks-dialog .window-header .window-title {
+    color: var(--ui-tweaks-primary) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 6px var(--ui-tweaks-primary-glow) !important;
+    font-family: var(--ui-tweaks-font) !important;
+}
+
+.phils-ui-tweaks-app.dialog .window-header .header-button,
+.ui-tweaks-dialog .window-header .header-button {
+    color: var(--ui-tweaks-primary) !important;
+}
+
+.phils-ui-tweaks-app.dialog .window-content,
+.ui-tweaks-dialog .window-content {
+    background: var(--ui-tweaks-bg) !important;
+    color: var(--ui-tweaks-text-main) !important;
+    font-family: var(--ui-tweaks-font) !important;
+    padding: 16px !important;
+}
+
+/* Dialog Form Field Layout Override */
+.ui-tweaks-dialog-form .form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin-bottom: 14px !important;
+}
+
+.ui-tweaks-dialog-form label {
+    font-weight: 600 !important;
+    color: var(--ui-tweaks-primary) !important;
+    margin-bottom: 6px !important;
+    font-size: 0.92rem !important;
+    text-shadow: 0 0 4px var(--ui-tweaks-primary-glow) !important;
+    flex: none !important;
+}
+
+.ui-tweaks-dialog-form input[type="text"] {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(197, 160, 89, 0.5) !important;
+    color: var(--ui-tweaks-text-main) !important;
+    border-radius: 5px !important;
+    padding: 6px 10px !important;
+    font-family: var(--ui-tweaks-font) !important;
+    font-size: 0.9rem !important;
+    box-sizing: border-box !important;
+}
+
+.ui-tweaks-dialog-form input[type="text"]:focus {
+    border-color: var(--ui-tweaks-primary) !important;
+    box-shadow: 0 0 8px var(--ui-tweaks-primary-glow) !important;
+    outline: none !important;
+}
+
+/* FilePicker Input Container & Square Button */
+.ui-tweaks-dialog-form .file-picker-container {
+    display: flex !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.ui-tweaks-dialog-form .file-picker-container input {
+    flex: 1 1 auto !important;
+    width: auto !important;
+}
+
+.ui-tweaks-dialog-form .btn-browse-filepicker {
+    width: 34px !important;
+    height: 34px !important;
+    flex: 0 0 34px !important;
+    background: var(--ui-tweaks-primary-dim) !important;
+    border: 1px solid var(--ui-tweaks-primary) !important;
+    color: var(--ui-tweaks-primary) !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ui-tweaks-dialog-form .btn-browse-filepicker:hover {
+    background: var(--ui-tweaks-primary) !important;
+    color: #141419 !important;
+    box-shadow: 0 0 8px var(--ui-tweaks-primary-glow) !important;
+    transform: translateY(-1px) !important;
+}
+
+.phils-ui-tweaks-app.dialog .dialog-buttons,
+.ui-tweaks-dialog .dialog-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.phils-ui-tweaks-app.dialog .dialog-buttons button,
+.ui-tweaks-dialog .dialog-buttons button {
+    flex: 1;
+    background: var(--ui-tweaks-primary-dim);
+    border: 1px solid var(--ui-tweaks-primary);
+    color: var(--ui-tweaks-primary);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-family: var(--ui-tweaks-font);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.phils-ui-tweaks-app.dialog .dialog-buttons button.default,
+.ui-tweaks-dialog .dialog-buttons button.default {
+    background: linear-gradient(135deg, #c5a059 0%, #a37f3b 100%);
+    color: #141419;
+    border: 1px solid #d4af67;
+    box-shadow: 0 2px 10px rgba(197, 160, 89, 0.3);
+}
+
+.phils-ui-tweaks-app.dialog .dialog-buttons button:hover,
+.ui-tweaks-dialog .dialog-buttons button:hover {
+    box-shadow: 0 0 10px var(--ui-tweaks-primary-glow);
+    transform: translateY(-1px);
+}

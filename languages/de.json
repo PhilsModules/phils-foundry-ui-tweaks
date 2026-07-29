@@ -1,0 +1,27 @@
+{
+  "PHILS_UI_TWEAKS": {
+    "Title": "Phils UI Tweaks",
+    "OpenConfig": "UI-Buttons anpassen",
+    "OpenConfigHint": "Öffne den visuellen Editor zum Verschieben, Ausblenden und Ordnen der linken & rechten Buttons.",
+    "LeftControls": "Linke Leiste (Szene-Steuerung)",
+    "RightSidebar": "Rechte Leiste (Sidebar-Tabs)",
+    "TabLeftControls": "Linke Leiste (Szene-Steuerung)",
+    "TabRightSidebar": "Rechte Leiste (Sidebar-Tabs)",
+    "Save": "Einstellungen speichern",
+    "Reset": "Auf Standard zurücksetzen",
+    "Hide": "Icon ausblenden",
+    "Show": "Icon anzeigen",
+    "Order": "Reihenfolge",
+    "CreateFolder": "+ Neue Ordner-Kategorie erstellen",
+    "FolderName": "Ordnername",
+    "SelectFolder": "Ordner wählen",
+    "NoFolder": "Kein Ordner (Hauptleiste)",
+    "ActiveFolders": "Aktive Ordner",
+    "Folder": "Ordner",
+    "DeleteFolder": "Ordner löschen",
+    "DragToReorder": "Elemente verschieben oder Eingabefelder nutzen, um Buttons anzupassen.",
+    "SavedNotice": "UI Tweaks gespeichert.",
+    "ResetNotice": "UI Tweaks auf Standard zurückgesetzt.",
+    "CollapseSidebar": "Seitenleiste einklappen"
+  }
+}

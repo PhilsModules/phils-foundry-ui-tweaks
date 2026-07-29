@@ -1,0 +1,27 @@
+{
+  "PHILS_UI_TWEAKS": {
+    "Title": "Phils UI Tweaks",
+    "OpenConfig": "Customize UI Buttons",
+    "OpenConfigHint": "Open visual editor to reorder, hide, and group left and right toolbar buttons.",
+    "LeftControls": "Left Controls Toolbar",
+    "RightSidebar": "Right Sidebar Tabs",
+    "TabLeftControls": "Left Controls Toolbar",
+    "TabRightSidebar": "Right Sidebar Tabs",
+    "Save": "Save Settings",
+    "Reset": "Reset to Defaults",
+    "Hide": "Hide Icon",
+    "Show": "Show Icon",
+    "Order": "Order",
+    "CreateFolder": "+ Create New Folder Category",
+    "FolderName": "Folder Name",
+    "SelectFolder": "Select Folder",
+    "NoFolder": "No Folder (Main Bar)",
+    "ActiveFolders": "Active Folders",
+    "Folder": "Folder",
+    "DeleteFolder": "Delete Folder",
+    "DragToReorder": "Drag items or use buttons to customize toolbars.",
+    "SavedNotice": "UI Tweaks saved.",
+    "ResetNotice": "UI Tweaks reset to defaults.",
+    "CollapseSidebar": "Collapse Sidebar"
+  }
+}
