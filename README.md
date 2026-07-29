@@ -45,7 +45,7 @@ Designed to give every Game Master and Player complete freedom over their screen
 - **Custom Folder Categories:** Create custom folders (e.g. "Combat & Characters") to group multiple sidebar tabs into a single button. Hovering or clicking the folder button reveals a smooth floating pop-out dropdown menu!
 
 ### 🎨 Modern Dark Glassmorphic Design
-- Matches the elegant visual design system of Phil's module ecosystem (metallic gold accents `#c5a059`, dark glassmorphism `rgba(20, 20, 26, 0.96)`, Signika typography, and smooth micro-animations).
+- Matches the elegant visual design system of Phil's module ecosystem.
 
 ### 👥 Per-User Customization
 - Settings are saved per client (`scope: "client"`). Every player and Game Master can customize their own UI layout independently without affecting anyone else!
