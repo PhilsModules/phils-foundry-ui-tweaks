@@ -3,7 +3,7 @@
 # Phil's UI Tweaks 🛠️
 
 ![Foundry v14 Compatible](https://img.shields.io/badge/Foundry-v14-brightgreen?style=flat-square) ![Foundry v12 Compatible](https://img.shields.io/badge/Foundry-v12-green?style=flat-square) ![License](https://img.shields.io/badge/License-GPLv3-blue?style=flat-square)
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
+[![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
 
 <br>
 
@@ -45,7 +45,7 @@ Designed to give every Game Master and Player complete freedom over their screen
 - **Custom Folder Categories:** Create custom folders (e.g. "Combat & Characters") to group multiple sidebar tabs into a single button. Hovering or clicking the folder button reveals a smooth floating pop-out dropdown menu!
 
 ### 🎨 Modern Dark Glassmorphic Design
-- Matches the elegant visual design system of Phil's module ecosystem.
+- Matches the elegant visual design system of Phil's module ecosystem (dark glassmorphism and smooth micro-animations).
 
 ### 👥 Per-User Customization
 - Settings are saved per client (`scope: "client"`). Every player and Game Master can customize their own UI layout independently without affecting anyone else!
@@ -128,7 +128,7 @@ Entwickelt, um jedem Spielleiter und Spieler die maximale Kontrolle über sein B
 - **Eigene Ordner-Kategorien:** Erstelle eigene Ordner (z. B. "Kampf & Charaktere"), um mehrere Seitenleisten-Tabs in einem einzigen Icon zusammenzufassen. Ein Klick oder Hovern auf den Ordner öffnet ein elegantes Ausklapp-Untermenü!
 
 ### 🎨 Modern Dark Glassmorphic Design
-- Fügt sich nahtlos in das Design-System von Phils Modulen ein.
+- Fügt sich nahtlos in das elegante Design-System von Phils Modulen ein (dunkles Glassmorphism-Design und flüssige Animationen).
 
 ### 👥 Nutzer-bezogene Einstellungen
 - Jede Einstellung wird pro Client gespeichert (`scope: "client"`). Jeder Spieler und der Spielleiter können ihre eigene Oberfläche individuell anpassen, ohne die Ansicht anderer zu verändern!
