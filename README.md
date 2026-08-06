@@ -119,8 +119,8 @@ Follow these simple steps to install the module in your Foundry VTT setup:
 ### 3. Customizing Right Sidebar & Creating Folders
 1. Open the **Right Sidebar (Sidebar Tabs)** tab.
 2. **Create a Folder:** Click the golden **`+ Create Folder Category`** button at the top, type a name (e.g. "Combat & Actors"), select an icon (FontAwesome or file path), choose a custom color or preset, and click **Create**.
-3. **Assign Tabs to Folders:** On any tab row (e.g. *Actors* or *Encounter Tracker*), select your folder from the dropdown menu. The row automatically moves into that folder's group section!
-4. **Reorder Folders & Inner Tabs:** Use `↑` `↓` arrows or drag-and-drop to position main toolbar folders/tabs, and reorder tabs inside each folder's sub-group container.
+3. **Assign Tabs via Drag & Drop:** Simply drag any tab row down into a folder card below the section divider to assign it. Drag it back up to the main section to remove it from the folder!
+4. **Reorder Folders & Inner Tabs:** Drag tabs or use `↑` `↓` arrows to position folders/tabs in the main bar, and arrange tabs within each folder container to set their pop-out menu sequence.
 5. **Edit Folders:** Click the edit button `✏️` on any folder row to update its name, icon, or custom color at any time.
 6. **Save Changes:** Click the golden **Save Settings** button at the bottom!
 
@@ -206,8 +206,8 @@ Folge dieser einfachen Anleitung, um das Modul in deiner Foundry VTT Installatio
 ### 3. Rechte Leiste anpassen & Ordner nutzen
 1. Wähle den Reiter **Rechte Leiste (Sidebar-Tabs)**.
 2. **Ordner erstellen:** Klicke oben auf den goldenen Button **`+ Neue Ordner-Kategorie erstellen`**, wähle einen Namen, ein Icon (FontAwesome oder Datei-Pfad) und eine Farbe aus und klicke auf **Erstellen**.
-3. **Tabs Ordnern zuweisen:** Wähle bei einem Tab (z. B. *Akteure* oder *Begegnungs-Tracker*) im Dropdown-Menü deinen Ordner aus. Das Tab wandert automatisch in die Karte des entsprechenden Ordners!
-4. **Ordner & Untermenü-Tabs sortieren:** Ordne die Hauptleisten-Buttons oben an. Unterhalb der Trennlinie kannst du die Tabs *innerhalb* jedes Ordners mit den Pfeilen `↑` `↓` oder Drag-and-Drop in ihre gewünschte Menü-Reihenfolge bringen.
+3. **Tabs per Drag & Drop zuweisen:** Ziehe ein Tab einfach per Drag & Drop aus der oberen Liste nach unten in eine Ordner-Karte, um es dem Ordner zuzuweisen. Ziehe es wieder nach oben, um es aus dem Ordner zu entfernen!
+4. **Ordner & Untermenü-Tabs sortieren:** Verschiebe Ordner und Tabs in der Hauptleiste oder sortiere die Tabs *innerhalb* jeder Ordner-Karte, um die exakte Reihenfolge im Ausklapp-Untermenü festzulegen.
 5. **Ordner bearbeiten:** Klicke auf das Stift-Symbol `✏️` bei einem Ordner, um Name, Icon oder Farbe jederzeit anzupassen.
 6. **Speichern:** Klicke unten auf den goldenen Button **Einstellungen speichern**!
 

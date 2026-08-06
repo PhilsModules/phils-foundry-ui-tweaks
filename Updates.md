@@ -1,5 +1,18 @@
 # Update Log
 
+## v1.2.0 - Pure Drag-and-Drop Assignment & Resizable UI 🚀
+
+- **Pure Drag-and-Drop Folder Assignment**: Removed cluttery dropdown menus on tab rows! Simply drag tabs directly between the main section and folder cards to assign or unassign them.
+- **Vertical Window Resizing**: You can now resize the configuration window downwards and upwards to fit as many toolbar items on screen as you like. The list automatically expands to fill the window.
+- **Bi-Directional Auto-Scrolling**: Dragging items near the top or bottom edge of the configuration window now automatically and smoothly scrolls the list in both directions.
+- **Clean & Streamlined Interface**: Tab rows feature a sleek, uncluttered design matching the scene controls toolbar.
+- **Interactive Empty Dropzones**: Empty folder cards display helpful drop hints so you can drag tabs into them effortlessly.
+
+## v1.1.1 - Localization Fix & Interface Improvements 🐛
+
+- **Complete Multi-Language Support**: Fixed hardcoded toolbar labels and tooltips so sub-tools buttons, headers, and action buttons now translate seamlessly when switching between English and German.
+- **Interface Tooltip Improvements**: Added proper localized tooltips for reordering and tool customization controls throughout the configuration window.
+
 ## v1.1.0 - Icon Scaling & Folder Submenu Customization 🎨
 
 - **Perfectly Scaled Folder Icons**: Custom folder icons (such as those from icon packs like Game-Icons) now fill the sidebar buttons perfectly without appearing too small.
