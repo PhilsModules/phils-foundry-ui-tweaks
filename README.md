@@ -3,7 +3,7 @@
 # Phil's UI Tweaks 🛠️
 
 ![Foundry v14 Compatible](https://img.shields.io/badge/Foundry-v14-brightgreen?style=flat-square) ![Foundry v12 Compatible](https://img.shields.io/badge/Foundry-v12-green?style=flat-square) ![License](https://img.shields.io/badge/License-GPLv3-blue?style=flat-square)
-[![Version](https://img.shields.io/badge/Version-1.1.0-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
+[![Version](https://img.shields.io/badge/Version-1.1.1-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
 
 <br>
 
@@ -42,6 +42,14 @@ _Übernimm die volle Kontrolle über deine Foundry VTT Benutzeroberfläche — A
 <br>
 
 ---
+
+<br>
+
+<div align="center">
+<img src="https://github.com/PhilsModules/phils-foundry-ui-tweaks/blob/main/main.png" alt="Preview" width="1800">
+</div>
+
+<br>
 
 <br>
 
