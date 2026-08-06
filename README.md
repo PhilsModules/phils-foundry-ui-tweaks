@@ -46,7 +46,7 @@ _Übernimm die volle Kontrolle über deine Foundry VTT Benutzeroberfläche — A
 <br>
 
 <div align="center">
-<img src="https://github.com/PhilsModules/phils-foundry-ui-tweaks/blob/main/main1.png" alt="Preview" width="1800">
+<img src="https://github.com/PhilsModules/phils-foundry-ui-tweaks/blob/main/main2.png" alt="Preview" width="1800">
 </div>
 
 <br>
