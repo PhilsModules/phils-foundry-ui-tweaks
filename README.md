@@ -3,7 +3,7 @@
 # Phil's UI Tweaks 🛠️
 
 ![Foundry v14 Compatible](https://img.shields.io/badge/Foundry-v14-brightgreen?style=flat-square) ![Foundry v12 Compatible](https://img.shields.io/badge/Foundry-v12-green?style=flat-square) ![License](https://img.shields.io/badge/License-GPLv3-blue?style=flat-square)
-[![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
+[![Version](https://img.shields.io/badge/Version-1.1.0-blue?style=flat-square)](https://github.com/PhilsModules/phils-foundry-ui-tweaks/releases) [![Patreon](https://img.shields.io/badge/SUPPORT-Patreon-ff424d?style=flat-square&logo=patreon)](https://www.patreon.com/PhilsModules)
 
 <br>
 
@@ -60,16 +60,19 @@ Designed to give every Game Master and Player complete freedom over their screen
 - **Sub-Tools Accordion:** Expand any main tool to customize its inner sub-tools (e.g. Select, Ruler, Circle, Rectangle under Drawing Tools).
 - **Hide Unused Tools:** Hide entire main tool categories or individual sub-tools with a single eye-toggle.
 
-### 📚 Right Sidebar Tab Customization
+### 📚 Right Sidebar Tab Customization & Folders
 - **Reorder Sidebar Tabs:** Arrange tabs (Chat, Combat, Scenes, Actors, Items, Journal, Compendiums, Settings) to fit your personal workflow.
 - **Hide Unused Tabs:** Hide any sidebar tabs you don't need on your screen.
 - **Custom Folder Categories:** Create custom folders (e.g. "Combat & Characters") to group multiple sidebar tabs into a single button. Hovering or clicking the folder button reveals a smooth floating pop-out dropdown menu!
+- **Folder Customization & Editing:** Edit existing folder names, custom icons (FontAwesome or custom image/SVG paths like Game-Icons), and assign custom colors or color presets at any time.
+- **Auto-Scaled SVG & Custom Icons:** Custom image and SVG icons (e.g. from game-icons.net) are automatically scaled and adapt dynamically to custom folder colors, hover effects, and active highlights.
+- **Inner Folder Reordering:** Grouped tabs inside each folder are organized in dedicated folder cards in the settings dialog. Reorder tabs within each folder to control their exact display order in the pop-out submenu!
 
 ### 🎨 Modern Dark Glassmorphic Design
 - Matches the elegant visual design system of Phil's module ecosystem (dark glassmorphism and smooth micro-animations).
 
 ### 👥 Per-User Customization
-- Settings are saved per client (`scope: "client"`). Every player and Game Master can customize their own UI layout independently without affecting anyone else!
+- Settings are saved per user client. Every player and Game Master can customize their own UI layout independently without affecting anyone else!
 
 ### ⚙️ Automatic Macro Creation
 - Automatically creates a dedicated **"Phils UI Tweaks"** folder in your Macro Directory with a **"Phils UI Tweaks Settings"** script macro (complete with a custom black & white icon) for instant 1-click access to settings.
@@ -107,10 +110,11 @@ Follow these simple steps to install the module in your Foundry VTT setup:
 
 ### 3. Customizing Right Sidebar & Creating Folders
 1. Open the **Right Sidebar (Sidebar Tabs)** tab.
-2. **Create a Folder:** Click the golden **`+ Create Folder Category`** button at the top, type a name (e.g. "Combat & Actors"), and click **Create**.
-3. **Assign Tabs to Folders:** On any tab row (e.g. *Actors* or *Encounter Tracker*), select your new folder from the dropdown menu.
-4. **Reorder Folders & Tabs:** Drag or use `↑` `↓` arrows to position folders and remaining tabs anywhere in the list.
-5. **Save Changes:** Click the golden **Save Settings** button at the bottom!
+2. **Create a Folder:** Click the golden **`+ Create Folder Category`** button at the top, type a name (e.g. "Combat & Actors"), select an icon (FontAwesome or file path), choose a custom color or preset, and click **Create**.
+3. **Assign Tabs to Folders:** On any tab row (e.g. *Actors* or *Encounter Tracker*), select your folder from the dropdown menu. The row automatically moves into that folder's group section!
+4. **Reorder Folders & Inner Tabs:** Use `↑` `↓` arrows or drag-and-drop to position main toolbar folders/tabs, and reorder tabs inside each folder's sub-group container.
+5. **Edit Folders:** Click the edit button `✏️` on any folder row to update its name, icon, or custom color at any time.
+6. **Save Changes:** Click the golden **Save Settings** button at the bottom!
 
 ---
 
@@ -132,7 +136,7 @@ PhilsUITweaks.openConfig();
 
 **Ein vollständiges System zur Anpassung der Benutzeroberfläche für Foundry VTT (v12 – v14).**
 
-Entwickelt, um jedem Spielleiter und Spieler die maximale Kontrolle über sein Bildschirm-Layout zu geben. Räume überfüllte Werkzeugleisten auf, blende ungenutzte Buttons aus, sortiere Elemente nach deinen Wünschen und fasst Seitenleisten-Tabs in schicken Ausklapp-Ordnern zusammen.
+Entwickelt, um jedem Spielleiter und Spieler die maximale Kontrolle über sein Bildschirm-Layout zu geben. Räume überfüllte Werkzeugleisten auf, blende ungenutzte Buttons aus, sortiere Elemente nach deinen Wünschen und fass Seitenleisten-Tabs in schicken Ausklapp-Ordnern zusammen.
 
 ---
 
@@ -143,16 +147,19 @@ Entwickelt, um jedem Spielleiter und Spieler die maximale Kontrolle über sein B
 - **Unterwerkzeuge-Akkordeon:** Klappe jedes Hauptwerkzeug auf, um dessen Unterwerkzeuge (z. B. Auswählen, Lineal, Kreis, Rechteck bei den Zeichenwerkzeugen) individuell anzupassen.
 - **Ungenutzte Werkzeuge ausblenden:** Blende ganze Kategorien oder einzelne Unterwerkzeuge mit einem Klick auf das Auge-Symbol aus.
 
-### 📚 Anpassen der rechten Seitenleiste (Sidebar)
+### 📚 Anpassen der rechten Seitenleiste & Ordner-System
 - **Reiter umsortieren:** Ordne deine Seitenleisten-Tabs (Chat, Begegnungen, Szenen, Akteure, Gegenstände, Journal, Kompendien, Einstellungen) nach deinen eigenen Vorlieben an.
 - **Ungenutzte Reiter ausblenden:** Blende Tabs aus, die du im Spiel nicht benötigst.
 - **Eigene Ordner-Kategorien:** Erstelle eigene Ordner (z. B. "Kampf & Charaktere"), um mehrere Seitenleisten-Tabs in einem einzigen Icon zusammenzufassen. Ein Klick oder Hovern auf den Ordner öffnet ein elegantes Ausklapp-Untermenü!
+- **Ordner bearbeiten & Einfärben:** Bearbeite Ordnernamen, wähle benutzerdefinierte Farben oder Presets (Gold, Rot, Orange, Grün, Türkis, Blau, Violett) und wähle beliebige Icons (FontAwesome oder eigene Bild-/SVG-Dateien z. B. aus Game-Icons).
+- **Skalierte Icons & Farbanpassung:** Eigene Ordner-Icons (auch SVG-Dateien) werden automatisch optimal skaliert und übernehmen die gewählte Ordner-Farbe sowie Hover- und Aktiv-Effekte.
+- **Zweiteilung & Untermenü-Sortierung:** Eine stilvolle Trennlinie unterscheidet Hauptleisten-Buttons von Elementen in Ordnern. Die Elemente jedes Ordners sind in eigenen Karten zusammengefasst und können für jedes Ausklapp-Menü individuell angeordnet werden!
 
 ### 🎨 Modern Dark Glassmorphic Design
 - Fügt sich nahtlos in das elegante Design-System von Phils Modulen ein (dunkles Glassmorphism-Design und flüssige Animationen).
 
 ### 👥 Nutzer-bezogene Einstellungen
-- Jede Einstellung wird pro Client gespeichert (`scope: "client"`). Jeder Spieler und der Spielleiter können ihre eigene Oberfläche individuell anpassen, ohne die Ansicht anderer zu verändern!
+- Jede Einstellung wird pro Benutzer-Client gespeichert. Jeder Spieler und der Spielleiter können ihre eigene Oberfläche individuell anpassen, ohne die Ansicht anderer zu verändern!
 
 ### ⚙️ Automatisches Einstellungen-Makro
 - Erstellt beim Spielstart automatisch einen Ordner **"Phils UI Tweaks"** im Makro-Verzeichnis mit dem Skript-Makro **"Phils UI Tweaks Settings"** (inklusive eigenem Schwarz-Weiß-Icon) für den Schnellzugriff auf die Einstellungen.
@@ -188,12 +195,13 @@ Folge dieser einfachen Anleitung, um das Modul in deiner Foundry VTT Installatio
 3. **Ausblenden:** Klicke auf das Auge-Symbol `👁` neben einem Werkzeug, um es auf dem Bildschirm aus- oder einzublenden.
 4. **Unterwerkzeuge:** Klicke auf den Button **Werkzeuge** bei einer Kategorie, um deren Unterwerkzeuge aufzuklappen und einzeln anzupassen.
 
-### 3. Rechte Leiste anpassen & Ordner erstellen
+### 3. Rechte Leiste anpassen & Ordner nutzen
 1. Wähle den Reiter **Rechte Leiste (Sidebar-Tabs)**.
-2. **Ordner erstellen:** Klicke oben auf den goldenen Button **`+ Neue Ordner-Kategorie erstellen`**, gib einen Namen ein (z. B. "Kampf & Charaktere") und klicke auf **Erstellen**.
-3. **Tabs zuweisen:** Wähle bei einem Tab (z. B. *Akteure* oder *Begegnungs-Tracker*) im Dropdown-Menü deinen neuen Ordner aus.
-4. **Ordner & Tabs ordnen:** Ziehe Ordner und verbleibende Tabs mit den Pfeilen `↑` `↓` an die gewünschte Stelle in der Liste.
-5. **Speichern:** Klicke unten auf den goldenen Button **Einstellungen speichern**!
+2. **Ordner erstellen:** Klicke oben auf den goldenen Button **`+ Neue Ordner-Kategorie erstellen`**, wähle einen Namen, ein Icon (FontAwesome oder Datei-Pfad) und eine Farbe aus und klicke auf **Erstellen**.
+3. **Tabs Ordnern zuweisen:** Wähle bei einem Tab (z. B. *Akteure* oder *Begegnungs-Tracker*) im Dropdown-Menü deinen Ordner aus. Das Tab wandert automatisch in die Karte des entsprechenden Ordners!
+4. **Ordner & Untermenü-Tabs sortieren:** Ordne die Hauptleisten-Buttons oben an. Unterhalb der Trennlinie kannst du die Tabs *innerhalb* jedes Ordners mit den Pfeilen `↑` `↓` oder Drag-and-Drop in ihre gewünschte Menü-Reihenfolge bringen.
+5. **Ordner bearbeiten:** Klicke auf das Stift-Symbol `✏️` bei einem Ordner, um Name, Icon oder Farbe jederzeit anzupassen.
+6. **Speichern:** Klicke unten auf den goldenen Button **Einstellungen speichern**!
 
 ---
 
